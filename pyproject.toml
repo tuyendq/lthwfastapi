@@ -1,7 +1,7 @@
 [project]
 name = "lthwfastapi"
 version = "0.1.0"
-description = "Add your description here"
+description = "Learn The Hardway - fastapi"
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = []
