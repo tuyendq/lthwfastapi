@@ -41,10 +41,11 @@ def read_quotes():
 #     items[name] = item
 #     return {"message": f"Updated {name}."}
   
-# @app.delete("/items")
-# def delete(item: Item):
-#     name = item.name
-#     if name not in items:
-#         raise HTTPException(status_code=404, detail="Item not found")
-#     del items[name]
-#     return {"message": f"Deleted {name}."}
+@app.delete("/quotes")
+def delete(quote: Quote):
+    text = quote.text
+    for quote in quotes:
+        if text in quote['text']:
+            quotes.remove(quote)
+            return {"message": f"Deleted {text}."}
+    raise HTTPException(status_code=404, detail="Item not found")
