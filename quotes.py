@@ -47,5 +47,5 @@ def delete(quote: Quote):
     for quote in quotes:
         if text in quote['text']:
             quotes.remove(quote)
-            return {"message": f"Deleted {text}."}
-    raise HTTPException(status_code=404, detail="Item not found")
+            return {"message": f"Deleted '{text}'."}
+    raise HTTPException(status_code=404, detail="Quote not found")
