@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 # define model Quote
@@ -25,7 +26,8 @@ def create(quote: Quote):
 @app.get("/")
 def read_quotes():
     """Return all quotes."""
-    return quotes
+    # return quotes
+    return JSONResponse(content=quotes)
 
 # @app.get("/items")
 # def read(name: str):
