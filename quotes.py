@@ -13,6 +13,7 @@ quotes = []
 
 @app.post("/quotes")
 def create(quote: Quote):
+    """Add new quote to list."""
     text = quote.text
     author = quote.author
     for quote in quotes:
@@ -25,7 +26,7 @@ def create(quote: Quote):
 
 @app.get("/")
 def read_quotes():
-    """Return all quotes."""
+    """Get all quotes."""
     # return quotes
     return JSONResponse(content=quotes)
 
