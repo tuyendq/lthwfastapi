@@ -21,7 +21,7 @@ def create(quote: Quote):
     # if text in quotes:
     #     raise HTTPException(status_code=409, detail="Quote exists")
     quotes.append({"text":text, "author": author})
-    return {"message": f"Added '{text}' to quotes."}
+    return {"message": f"Added '{text}' by '{author}' to quotes."}
 
 @app.get("/")
 def read_quotes():
